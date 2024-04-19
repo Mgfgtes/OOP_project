@@ -52,7 +52,7 @@ namespace TicTacToe
                 MessageBox.Show("Remíza", "Piškvorky", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-        public void procCoords(int x, int y, String playerSymbol)
+        public bool procCoords(int x, int y, String playerSymbol)
         
         {
             if(!fin) board[x, y] = playerSymbol;
@@ -61,8 +61,10 @@ namespace TicTacToe
                 fin = true;
                 MessageBox.Show("Vyhrál " + currentPlayer +", počet tahů: " + counter, "Výhra", MessageBoxButton.OK, MessageBoxImage.Information);
                 ((MainWindow)System.Windows.Application.Current.MainWindow).nextRound.Visibility = Visibility.Visible;
+                return true;
             }
-            
+            add();
+            return false;
         }
 
         private bool CheckForWin()

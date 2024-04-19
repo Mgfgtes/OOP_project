@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mate2\\source\\repos\\OOP_project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|c:\\users\\mate2\\source\\repos\\oop_project\\tictactoegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|solutionrelative:tictactoegame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|c:\\users\\mate2\\source\\repos\\oop_project\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|c:\\users\\mate2\\source\\repos\\oop_project\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C9BF06CA-DADF-45A2-8823-03B1BC5F8134}|TicTacToe.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\mate2\\source\\repos\\OOP_project\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\mate2\\source\\repos\\OOP_project\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAA3wGEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T15:25:45.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicTacToeGame.cs",
+              "DocumentMoniker": "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToeGame.cs",
+              "RelativeDocumentMoniker": "TicTacToeGame.cs",
+              "ToolTip": "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToeGame.cs",
+              "RelativeToolTip": "TicTacToeGame.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowEIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T15:25:22.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\mate2\\source\\repos\\OOP_project\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\mate2\\source\\repos\\OOP_project\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-19T15:25:20.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

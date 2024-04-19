@@ -95,7 +95,6 @@ namespace TicTacToe
                 // Získání pozice tahu
                 int row = position.Item1;
                 int col = position.Item2;
-                game.add();
                 game.procCoords(row, col, btn.Content.ToString());
                 game.changeCurrentPlayer();
                 currentPlayerText.Content = "Pokračuje hráč: " + game.currentPlayer;

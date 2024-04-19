@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mate2\\source\\repos\\TicTacToe\\TicTacToe.csproj": {}
+    "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mate2\\source\\repos\\TicTacToe\\TicTacToe.csproj": {
+    "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mate2\\source\\repos\\TicTacToe\\TicTacToe.csproj",
+        "projectUniqueName": "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToe.csproj",
         "projectName": "TicTacToe",
-        "projectPath": "C:\\Users\\mate2\\source\\repos\\TicTacToe\\TicTacToe.csproj",
+        "projectPath": "C:\\Users\\mate2\\source\\repos\\OOP_project\\TicTacToe.csproj",
         "packagesPath": "C:\\Users\\mate2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mate2\\source\\repos\\TicTacToe\\obj\\",
+        "outputPath": "C:\\Users\\mate2\\source\\repos\\OOP_project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
