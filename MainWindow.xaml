@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="Piškvorky" Height="650" Width="500">
+        Title="Piškvorky" Height="650" Width="500"
+        MinHeight="650" MinWidth="500">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -35,12 +36,12 @@
 
         <Label x:Name="currentPlayerText" Content="Na tahuje je hráč: &#xD;&#xA;" IsEnabled="False" Margin="5,91,250,443" Visibility="Hidden"/>
 
-        <Button x:Name="loadPrevious" Content="Načíst z předešlé hry" Click="LoadPrevious_Click" Margin="360,91,10,483" Height="35" Visibility="Hidden" />
 
         <!-- Zobrazení herního pole -->
         <ItemsControl x:Name="GameBoard" Margin="0,130,0,0" Grid.RowSpan="2"/>
 
         <!-- Tlačítko pro zobrazení žebříčku nejlepších hráčů -->
+        <Button x:Name="loadPrevious" Content="Načíst z předešlé hry" Click="LoadPrevious_Click" Margin="24,10,346,12" Visibility="Hidden" Grid.Row="1" />
         <Button Content="Zobrazit žebříček" Click="ShowLeaderboard_Click" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Height="20" Width="95" Grid.Column="1" Margin="0,0,9,0"/>
         <Button x:Name="nextRound" Content="Další hra" Click="NextRound_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Height="20" Width="95" Grid.Column="1" Margin="0,0,9,0" Visibility="Hidden"/>
     </Grid>

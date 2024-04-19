@@ -1,4 +1,7 @@
 ﻿using Accessibility;
+using System.Collections.Generic;
+using System.Diagnostics.Metrics;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
@@ -10,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Linq;
 
 namespace TicTacToe
 {
@@ -19,6 +23,8 @@ namespace TicTacToe
     public partial class MainWindow : Window
     {
         TicTacToeGame game;
+        Dictionary<string,int> victoryMap = new Dictionary<string,int>();
+        string fileName = "leaderboard.txt";
         public MainWindow()
         {
             InitializeComponent();
@@ -70,7 +76,44 @@ namespace TicTacToe
             BoardSizeComboBox.IsEnabled = false;
         }
 
-        private void ShowLeaderboard_Click(object sender, RoutedEventArgs e) { }
+        private void ShowLeaderboard_Click(object sender, RoutedEventArgs e) {
+            
+            string leaderboard = "";
+            
+
+            // Zkontrolujeme, zda soubor existuje
+            if (!File.Exists(fileName))
+            {
+                // Pokud soubor neexistuje, vytvoříme ho a zapíšeme do něj nějaký text
+                File.CreateText(fileName);
+            }
+
+            var sortedLeaderboard = victoryMap.OrderByDescending(pair => pair.Value);
+            // Otevřeme existující soubor a načteme řádek po řádku
+            using (StreamReader sr = File.OpenText(fileName))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] parts = line.Split(" ");
+                    victoryMap.Add(parts[0], Int32.Parse(parts[1]));
+                }
+            }
+        
+            
+            
+            foreach (KeyValuePair<string,int> pair in sortedLeaderboard)
+            {
+                // Přidáme hodnotu záznamu do výsledného řetězce
+                leaderboard = leaderboard + pair.Key + " " + pair.Value + "\n";
+            }
+            MessageBox.Show(leaderboard, "Leaderboard", MessageBoxButton.OK);
+            victoryMap.Clear();
+            
+
+
+
+        }
 
         private void Player1NameTextBox_TextChanged(object sender, TextChangedEventArgs e) { }
 
@@ -95,7 +138,52 @@ namespace TicTacToe
                 // Získání pozice tahu
                 int row = position.Item1;
                 int col = position.Item2;
-                game.procCoords(row, col, btn.Content.ToString());
+                if (game.procCoords(row, col, btn.Content.ToString()))
+                {
+                   
+                    string leaderboard = "";
+
+                    // Otevřeme existující soubor a načteme řádek po řádku
+                    using (StreamReader sr = File.OpenText(fileName))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            string[] parts = line.Split(" ");
+                            victoryMap.Add(parts[0], Int32.Parse(parts[1]));
+                        }
+                    }
+
+
+
+                    foreach (KeyValuePair<string, int> pair in victoryMap)
+                    {
+                        // Přidáme hodnotu záznamu do výsledného řetězce
+                        leaderboard = leaderboard + pair.Key + " " + pair.Value + "\n";
+                    }
+
+
+                    if (File.Exists(fileName))
+                    {
+                        // Pokud soubor existuje, smažeme ho
+                        File.Delete(fileName);
+                    }
+                    if (victoryMap.ContainsKey(game.currentPlayer))
+                    {
+                        victoryMap[game.currentPlayer]++;
+                    }
+                    else
+                    {
+                        victoryMap.Add(game.currentPlayer, 1);
+                    }
+                    using (StreamWriter outputFile = new StreamWriter(fileName))
+                    {
+                        foreach (KeyValuePair<string, int> pair in victoryMap)
+                            outputFile.WriteLine(pair.Key + " " + pair.Value);
+                    }
+                    victoryMap.Clear();
+
+                }
                 game.changeCurrentPlayer();
                 currentPlayerText.Content = "Pokračuje hráč: " + game.currentPlayer;
             }

@@ -25,12 +25,13 @@ namespace TicTacToe
             this.player1Name = player1Name;
             this.player2Name = player2Name;
             this.boardSize = boardSize;
-            this.fin = false;
             start();
         }
 
         public void start()
         {
+            fin = false;
+            counter = 0;
             board = new string[boardSize, boardSize];
             Random rnd = new Random();
             int startingplayer = rnd.Next(1, 3);
@@ -50,7 +51,9 @@ namespace TicTacToe
             counter++;
             if(counter == boardSize*boardSize) {
                 MessageBox.Show("Remíza", "Piškvorky", MessageBoxButton.OK, MessageBoxImage.Information);
+                ((MainWindow)System.Windows.Application.Current.MainWindow).nextRound.Visibility = Visibility.Visible;
             }
+
         }
         public bool procCoords(int x, int y, String playerSymbol)
         
