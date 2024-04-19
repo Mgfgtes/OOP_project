@@ -88,7 +88,7 @@ namespace TicTacToe
                 File.CreateText(fileName);
             }
 
-            var sortedLeaderboard = victoryMap.OrderByDescending(pair => pair.Value);
+            var sortedLeaderboard = victoryMap.OrderByDescending(pair => pair.Value).Take(10);
             // Otevřeme existující soubor a načteme řádek po řádku
             using (StreamReader sr = File.OpenText(fileName))
             {
@@ -99,9 +99,11 @@ namespace TicTacToe
                     victoryMap.Add(parts[0], Int32.Parse(parts[1]));
                 }
             }
-        
             
-            
+            for (int i = 0; i < 9; i++)
+            {
+
+            }
             foreach (KeyValuePair<string,int> pair in sortedLeaderboard)
             {
                 // Přidáme hodnotu záznamu do výsledného řetězce
@@ -110,9 +112,6 @@ namespace TicTacToe
             MessageBox.Show(leaderboard, "Leaderboard", MessageBoxButton.OK);
             victoryMap.Clear();
             
-
-
-
         }
 
         private void Player1NameTextBox_TextChanged(object sender, TextChangedEventArgs e) { }
@@ -153,8 +152,6 @@ namespace TicTacToe
                             victoryMap.Add(parts[0], Int32.Parse(parts[1]));
                         }
                     }
-
-
 
                     foreach (KeyValuePair<string, int> pair in victoryMap)
                     {
